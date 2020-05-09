@@ -23,7 +23,7 @@
                       </span>
                     </h2>
                 </header>
-                {{ if .Site.Params.enableToc }}
+                {{ if .Params.enableToc }}
                   {{ if .TableOfContents }}
                     <div id="toc">
                       {{ .TableOfContents }}
@@ -39,7 +39,7 @@
                 {{ partial "share.html" . }}
             {{ end }}
 
-            {{ if .Site.Params.enableDisqus }}
+            {{ if and (.Site.Params.enableDisqus) (not .Params.disableDisqus) }}
                 {{ partial "disqus.html" . }}
             {{ end }}
 
